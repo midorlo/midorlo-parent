@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.midorlo</groupId>
+    <artifactId>parent</artifactId>
+    <packaging>pom</packaging>
+
+    <name>midorlo.com parent pom</name>
+    <description>Parent pom.xml for all my published projects.</description>
+
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+        <!-- Dependencies Versions -->
+        <assertj-swing-junit.artifactId>assertj-swing-junit</assertj-swing-junit.artifactId>
+        <assertj-swing-junit.version>3.17.1</assertj-swing-junit.version>
+        <flatlaf.version>2.0-rc1</flatlaf.version>
+        <flatlaf-extras.version>2.0-rc1</flatlaf-extras.version>
+        <flatlaf-intellij-themes.version>2.0-rc1</flatlaf-intellij-themes.version>
+        <flatlaf-swingx.version>2.0-rc1</flatlaf-swingx.version>
+        <javafaker.version>1.0.2</javafaker.version>
+        <log4j-slf4j-impl.version>2.17.0</log4j-slf4j-impl.version>
+        <log4j-api.version>2.17.0</log4j-api.version>
+        <log4j-core.version>2.17.0</log4j-core.version>
+        <lombok.version>1.18.22</lombok.version>
+        <slf4j-api.version>1.7.33</slf4j-api.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>${assertj-swing-junit.artifactId}</artifactId>
+                <version>${assertj-swing-junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.javafaker</groupId>
+                <artifactId>javafaker</artifactId>
+                <version>${javafaker.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${log4j-slf4j-impl.version}</version>
+                <exclusions>
+                    <!-- Omitting old version -->
+                    <exclusion>
+                        <artifactId>slf4j-api</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.formdev</groupId>
+                <artifactId>flatlaf</artifactId>
+                <version>${flatlaf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.formdev</groupId>
+                <artifactId>flatlaf-extras</artifactId>
+                <version>${flatlaf-extras.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.formdev</groupId>
+                <artifactId>flatlaf-swingx</artifactId>
+                <version>${flatlaf-swingx.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.formdev</groupId>
+                <artifactId>flatlaf-intellij-themes</artifactId>
+                <version>${flatlaf-intellij-themes.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <url>https://midorlo.com</url>
+
+    <developers>
+        <developer>
+            <id>midorlo</id>
+            <name>midorlo</name>
+            <url>https://midorlo.com</url>
+        </developer>
+    </developers>
+
+    <inceptionYear>2022</inceptionYear>
+
+    <profiles>
+        <profile>
+            <id>debug</id>
+            <properties>
+                <debug>true</debug>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+    <!--    <build>-->
+    <!--        <pluginManagement/>-->
+    <!--    </build>-->
+    <!--    <ciManagement/>-->
+    <!--    <contributors/>-->
+    <!--    <dependencies/>-->
+    <!--    <dependencyManagement/>-->
+    <!--    <distributionManagement/>-->
+    <!--    <issueManagement/>-->
+    <!--    <licenses/>-->
+    <!--    <mailingLists/>-->
+    <!--    <modules/>-->
+    <!--    <organization/>-->
+    <!--    <pluginRepositories/>-->
+    <!--    <prerequisites/>-->
+    <!--    <reporting/>-->
+    <!--    <reports/>-->
+    <!--    <repositories/>-->
+    <!--    <scm/>-->
+
+</project>
